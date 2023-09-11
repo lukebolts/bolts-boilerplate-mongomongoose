@@ -6,6 +6,11 @@
   "scripts": {
     "start": "node server.js"
   },
+  "overrides": {
+    "@types/mongodb": {
+        "@types/bson": "4.0.5"
+    }
+  },
   "dependencies": {
     "body-parser": "^1.15.2",
     "dotenv": "^8.2.0",
