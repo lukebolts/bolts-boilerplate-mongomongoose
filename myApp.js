@@ -36,26 +36,26 @@ const createManyPeople = function(arrayOfPeople, done){
   });
 };
 
-var personName = "Joni Mitchell"
-
 const findPeopleByName = (personName, done) => {
-  Person.find({name: personName}, function(err,joni){
+  Person.find({name: personName}, function(err,foundPeople){
     if (err) return console.error(err);
-    done(null, joni);
+    done(null, foundPeople);
   })
 };
 
-var food = 'Fruit Cocktail'
 
 const findOneByFood = (food, done) => {
-  Person.findOne({favoriteFoods: food}, function(err,prince){
+  Person.findOne({favoriteFoods: food}, function(err,foundOne){
     if (err) return console.error(err);
-    done(null, prince);
+    done(null, foundOne);
   });
 }
 
 const findPersonById = (personId, done) => {
-  done(null /*, data*/);
+  Person.findById({_id: personId}, function(err, foundById){
+    if (err) return console.error(err);
+    done(null, foundById)
+  })
 };
 
 const findEditThenSave = (personId, done) => {
