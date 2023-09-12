@@ -23,7 +23,7 @@ var createAndSavePerson = function(done) {
 };
 
 const createManyPeople = (arrayOfPeople, done) => {
-  var manyPeople = Person.create([
+  var manyPeople = await Person.create([
     {name: 'Prince Rodgers Nelson', age: 69, favoriteFoods: ['Starfish', 'Coffee', 'Fruit Cocktail']}, 
     {name: 'Joni Mitchell', age: 77, favoriteFoods: ['Coffee', 'Croissants']},
     {name: 'Millie Jackson', age: 88, favoriteFoods: ['Cornbread', 'Grits']}
