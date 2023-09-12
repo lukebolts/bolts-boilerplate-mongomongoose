@@ -22,15 +22,17 @@ var createAndSavePerson = function(done) {
   });
 };
 
-const createManyPeople = (arrayOfPeople, done) => {
-  var manyPeople = new Person.create([
-    {name: 'Prince Rodgers Nelson', age: 69, favoriteFoods: ['Starfish', 'Coffee', 'Fruit Cocktail']}, 
-    {name: 'Joni Mitchell', age: 77, favoriteFoods: ['Coffee', 'Croissants']},
-    {name: 'Millie Jackson', age: 88, favoriteFoods: ['Cornbread', 'Grits']}
-  ])
-  manyPeople.save(function(err,data){
+
+var arrayOfPeople = [
+  {name: 'Prince Rodgers Nelson', age: 69, favoriteFoods: ['Starfish', 'Coffee', 'Fruit Cocktail']}, 
+  {name: 'Joni Mitchell', age: 77, favoriteFoods: ['Coffee', 'Croissants']},
+  {name: 'Millie Jackson', age: 88, favoriteFoods: ['Cornbread', 'Grits']}
+  ]
+  
+const createManyPeople = function(arrayOfPeople, done){
+  Person.create(arrayOfPeople, function(err,people){
     if (err) return console.error(err)
-    done(null, data)
+    done(null, people)
   });
 };
 
