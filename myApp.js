@@ -28,7 +28,7 @@ var arrayOfPeople = [
   {name: 'Joni Mitchell', age: 77, favoriteFoods: ['Coffee', 'Croissants']},
   {name: 'Millie Jackson', age: 88, favoriteFoods: ['Cornbread', 'Grits']}
   ]
-  
+
 const createManyPeople = function(arrayOfPeople, done){
   Person.create(arrayOfPeople, function(err,people){
     if (err) return console.error(err)
@@ -36,8 +36,13 @@ const createManyPeople = function(arrayOfPeople, done){
   });
 };
 
+var personName = "Joni Mitchell"
+
 const findPeopleByName = (personName, done) => {
-  done(null /*, data*/);
+  Person.find({name: personName}, function(err,joni){}
+    if (err) return console.error(err)
+    done(null, joni);
+  };
 };
 
 const findOneByFood = (food, done) => {
