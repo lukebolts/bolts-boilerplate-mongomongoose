@@ -39,7 +39,7 @@ const createManyPeople = function(arrayOfPeople, done){
 var personName = "Joni Mitchell"
 
 const findPeopleByName = (personName, done) => {
-  Person.find({name: personName}, function(err,joni){}
+  Person.find({name: personName}, function(err,joni){
     if (err) return console.error(err)
     done(null, joni);
   };
