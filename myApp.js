@@ -85,8 +85,8 @@ const removeById = (personId, done) => {
   })
 };
 
+const nameToRemove = "Mary";
 const removeManyPeople = (nameToRemove, done) => {
-  const nameToRemove = "Mary";
   Person.remove({name: nameToRemove}, (err, removedPeople) => {
   if(err) return console.log(err);
   done(null, removedPeople);
