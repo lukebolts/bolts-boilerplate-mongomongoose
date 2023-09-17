@@ -96,14 +96,13 @@ const removeManyPeople = (done) => {
 const queryChain = (done) => {
   const foodToSearch = "burrito";
   var searchQuery = Person.find({favoriteFoods: foodToSearch})
-    searchQuery.sort({name: 'asc'}
+    searchQuery.sort({name: 'asc'})
       .limit(2)
       .select('-age')
       .exec(function(error, people){
           if(err) return console.log(err);
           done(null, people);
       })
-    )
   }
 
 /** **Well Done !!**
